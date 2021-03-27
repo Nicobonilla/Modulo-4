@@ -1,29 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-           Sistema de informacion
-        </title>
-        <style type="text/css">
-         	<%@ include file = "css/estilos.css" %>
-        </style>
-       
-    </head>
-    <body class="body1 body2">
-        <header class="cabecera">
-            <br>
-            <h1>Inicio</h1>
-            <br>
-        </header>
-        <br>
-        
-       <jsp:include page="menu.jsp"></jsp:include>
-       
+
+    <jsp:include page="head.jsp">
+		<jsp:param value="Sistema de informacion" name="title"/>
+		<jsp:param value="Inicio" name="titulo"/>
+	</jsp:include>
+
         <main class="principal">
             <ol>
                 <br>
@@ -47,7 +29,5 @@
         <footer class="pie">
             ® Derechos reservados 2021
         </footer>
-        
-      
     </body>
 </html>
