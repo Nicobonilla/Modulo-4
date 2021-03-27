@@ -49,7 +49,7 @@
 				</ul></li>
 			<li class="nav-item"><a class="nav-link" href="reportes.html">Reportes</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a>
+			<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a>
 			</li>
 		</ul>
 	</nav>

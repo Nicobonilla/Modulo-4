@@ -26,15 +26,17 @@
 	<br>
 	<jsp:include page="loginNav.jsp"></jsp:include>
 	<br>
-	<main class="principal">
-		<form id="login" novalidate class="was-validated">
+	<main class="princiinpal">
+	
+	
+		<form action="LoginIngreso" method="post" id="login" novalidate class="was-validated">
 			<br>
 			<ul>
 				<li>
 					<div class="col-md-4">
 						<label for="usuario">RUT del usuario: (ejemplo:12345678-9)</label>
 						<input class="form-control" type="text" id="usuario"
-								name="ingreso_usuario" placeholder="XXXXXXXX-Y" required>
+								name="usuario" placeholder="XXXXXXXX-Y" required> <!--  SE DEBIO CAMBIAR EL NAME YA QUE NO PERMITIA EL SERVLET TRABAJAR CON _ --> 
 						<div class="invalid-feedback">Debe ingresar el RUT.</div>
 					</div>
 				</li>
@@ -43,12 +45,15 @@
 				</div>
 				<li><label for="contras" class="form-label">Clave:</label> <input
 					class="form-control" style="width: 25%;" type="password"
-					id="contras" name="ingreso_contraseña" maxlength="20" required>
+					id="password" name="password" maxlength="20" required>  <!--SE DEBIO CAMBIAR EL NAME YA QUE NO PERMITIA EL SERVLET TRABAJAR CON _ -->
 					<div class="invalid-feedback">Debe ingresar una contraseña.</div></li>
 			</ul>
-			<input type="button" id="botoning" style="margin-left: 200px;"
-				value="ingresar" onclick=" ingreso()">
-		</form><br>
+			<input type="submit" id="botoning" style="margin-left: 200px;"
+					value="ingresar" onclick=" ingreso()">
+		</form>
+		
+		
+		<br>
 		<div>
 			<p id="msgerror" style='margin-left: 15px;'></p>
 		</div><br> <br>
