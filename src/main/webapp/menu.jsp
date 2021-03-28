@@ -46,11 +46,9 @@
 							de pagos</a></li>
 					<li><a class="dropdown-item" href="crearpago.jsp">Crear
 							pago</a></li>
-
 				</ul></li>
-			<li class="nav-item"><a class="nav-link" href="reportes.jsp">Reportes</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="reportes.jsp">Reportes</a></li>
+			<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a></li>
+			<li class="nav-item"><a class="nav-link" href="LogOutServlet">Log Out</a></li>
 		</ul>
 	</nav>

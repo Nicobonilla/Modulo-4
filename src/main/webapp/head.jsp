@@ -8,8 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> ${param.title}</title>
-	<style type="text/css">
-		<jsp:include page = "css/bootstrap.min.css" />  
+	<style type="text/css"> <%-- 	<jsp:include page = "css/bootstrap.min.css" />  --%>
+	
 		 <jsp:include page = "css/estilos.css" />
 	</style>
 	<script type="text/javascript">
