@@ -1,4 +1,4 @@
-package servlets;
+package controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -23,15 +23,10 @@ public class Contacto extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    private static final void panel(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession sesion = request.getSession();
-		Object usuario = (String) sesion.getAttribute("usuario");
-	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		panel(request, response);
 		HttpSession sesion = request.getSession();
 		Object usuario = (String) sesion.getAttribute("usuario");
 		if ( usuario != null ) {
@@ -39,9 +34,6 @@ public class Contacto extends HttpServlet {
 		} else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
-		
-		
-		
 	}
 	
 	/**
