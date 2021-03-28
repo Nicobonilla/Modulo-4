@@ -1,6 +1,8 @@
-package capacitacion;
+package controlador;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,34 +10,42 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import implementacion.ImpIntCapacitacion;
+import modelo.Capacitacion;
+
+
+
 /**
- * Servlet implementation class CrearCapacitacion
+ * Servlet implementation class ListarCapacitacion
  */
-@WebServlet("/CrearCapacitacion")
-public class CrearCapacitacion extends HttpServlet {
+@WebServlet("/ListarCapacitacion")
+public class ListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearCapacitacion() {
+    public ListarCapacitacion() {
         super();
         // TODO Auto-generated constructor stub
     }
     
-    private static final void panel(HttpServletRequest request, HttpServletResponse response) {
-    	HttpSession sesion = request.getSession();
-    	Object usuario = (String) sesion.getAttribute("usuario");
+    private static final void listaCapacitacion(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	ImpIntCapacitacion impIntCap = new ImpIntCapacitacion();
+		List<Capacitacion> listaCap = impIntCap.retornaListaCapacitacion();
+		request.setAttribute("listadoCapacitacion", listaCap );
+		request.getRequestDispatcher("listarCapacitaciones.jsp").include(request, response);
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		panel(request, response);
+	
 		HttpSession sesion = request.getSession();
 		Object usuario = (String) sesion.getAttribute("usuario");
 		if (usuario != null) {
-			request.getRequestDispatcher("crearCapacitacion.jsp").forward(request, response);
+			listaCapacitacion(request, response);
+			request.getRequestDispatcher("listarCapacitaciones.jsp").forward(request, response);
 		} else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
@@ -50,4 +60,3 @@ public class CrearCapacitacion extends HttpServlet {
 	}
 
 }
-

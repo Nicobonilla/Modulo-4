@@ -1,4 +1,4 @@
-package capacitacion;
+package controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,32 +9,28 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ListarCapacitacion
+ * Servlet implementation class CrearUsuario
  */
-@WebServlet("/ListarCapacitacion")
-public class ListarCapacitacion extends HttpServlet {
+@WebServlet("/CrearUsuario")
+public class CreacionDeUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarCapacitacion() {
+    public CreacionDeUsuario() {
         super();
         // TODO Auto-generated constructor stub
     }
-    private static final void panel(HttpServletRequest request, HttpServletResponse response) {
-    	HttpSession sesion = request.getSession();
-    	Object usuario = (String) sesion.getAttribute("usuario");
-    }
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		panel(request, response);
 		HttpSession sesion = request.getSession();
 		Object usuario = (String) sesion.getAttribute("usuario");
 		if (usuario != null) {
-			request.getRequestDispatcher("crearCapacitacion.jsp").forward(request, response);
+			request.getRequestDispatcher("crearUsuario.jsp").forward(request, response);
 		} else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}

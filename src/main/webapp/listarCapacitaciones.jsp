@@ -1,36 +1,37 @@
+<%@ page import ="modelo.Capacitacion" %>
+<%@ page import ="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <jsp:include page="head.jsp">
 	<jsp:param value="Listar Capacitaciones" name="title"/>
 	<jsp:param value="Listado de Capacitaciones" name="titulo"/>
 </jsp:include>
 
 <div class="principal">
-	<br>
 	<div class="table-responsive ">
+	<%
+	List<Capacitacion> lista = (List<Capacitacion>) request.getAttribute("listadoCapacitacion");
+	%>
 		<table class="table table-bordered table caption-top"
 			style="color: aliceblue;">
-			<caption>Listado de capacitaciones</caption>
+			<thead> 
+				<th scope = "col">ID capacitación</th>
+				<th scope = "col">Fecha capacitacion</th>
+				<th scope = "col">Hora capacitacion</th>
+				<th scope = "col">Nombre del cliente</th>
+			</thead>
+			<tbody>
+			<%
+			for (Capacitacion cap : lista ){
+			%>
 			<tr>
-				<th>ID capacitación</th>
-				<th>Fecha capacitacion</th>
-				<th>Hora capacitacion</th>
-				<th>Nombre del cliente</th>
+				<th><%= cap.getIdCapacitacion() %></th>
+				<td><%= cap.getDia() +" - "+cap.getHora() %></td>
+				<td><%= cap.getLugar() %></td>
+				<td><%= cap.getDuracion() %></td>
 			</tr>
-			<tr>
-				<th>1</th>
-				<td>10-11-2020</td>
-				<td>12:00</td>
-				<td>Peter Rock</td>
-			</tr>
-			<tr>
-				<th>2</th>
-				<td>12-12-2020</td>
-				<td>10:00</td>
-				<td>Elsa Pallo</td>
-			</tr>
-			<tr>
+			<% } %>
+			</tbody>	
 		</table>
 	</div>
 </div>

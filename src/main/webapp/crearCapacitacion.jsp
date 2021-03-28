@@ -6,28 +6,28 @@
 </jsp:include>
 
 <main class="principal">
-	<br>
-	<form>
-		<ul>
-			<li><label for="nombreu">Nombre cliente:</label> <input
-				class="form" type="text" id="nombreu" name="ingreso_nombre">
-			</li>
-			<li><label for="Fecha">Fecha capacitación:</label> <input
-				class="form" type="date" id="Fecha" name="ingreso_fecha"></li>
-			<li><label for="hora">Hora capacitación:</label> <input
-				class="form" type="time" id="hora" name="ingreso_hora"></li>
-			<li><label for="lugar">Lugar capacitación:</label> <input
-				class="form" type="text" id="lugar" name="ingreso_lugar"></li>
-			<li><label for="duracion">Duración en minutos:</label> <input
-				class="form" type="number" id="duracion" name="ingreso_duracion">
-			</li>
-		</ul>
-		<button style='margin-left: 50px;' type="submit">Crear
-			capacitación</button>
-		<br> <br> <br>
-	</form>
+		<form class = "" action ="" method = "post">
+				<label for="nombreu">Nombre cliente:</label>
+				<input type="text" id="nombreu" name="ingreso_nombre">
+				<label for="Fecha">Fecha capacitación:</label>
+				<input type="date" id="Fecha" name="ingreso_fecha">
+				<label for="hora">Hora capacitación:</label> 
+				<input type="time" id="hora" name="ingreso_hora">
+				<label for="lugar">Lugar capacitación:</label> 
+				<input type="text" id="lugar" name="ingreso_lugar">
+				<label for="duracion">Duración en minutos:</label> 
+				<input type="number" id="duracion" name="ingreso_duracion">
+				<label for="duracion">Duración en minutos:</label> 
+				<input type="number" id="duracion" name="ingreso_duracion">
+			<button style='margin-left: 50px;' type="submit" value= "capacitacion">Crear capacitación</button>
+		</form>
 </main>
-<br>
-<footer class="pie"> ® Derechos reservados 2021 </footer>
-</body>
-</html>
+
+<jsp:include page="footer.jsp"></jsp:include>
+Integer setIdCapacitacion = 1;// += ultimo;
+		Integer rutCliente = entrada.nextInt();
+		String dia = entrada.next();			// VALIDACION DIA DE LA SEMANA
+		String hora = entrada.next();	// VALIDACION HORA
+		String lugar = entrada.nextLine();
+		String duracion = entrada.next();
+		Integer cantidadAsistentes = entrada.nextInt();

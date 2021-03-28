@@ -11,7 +11,7 @@
 				role="button" aria-expanded="false">Usuarios</a>
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="Login">Login</a></li>
-					<li><a class="dropdown-item" href="crearusuario.jsp">Crear
+					<li><a class="dropdown-item" href="crearUsuario.jsp">Crear
 							usuario</a></li>
 				</ul></li>
 
@@ -19,9 +19,9 @@
 				class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
 				role="button" aria-expanded="false">Capacitaciones</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="listarcapacitaciones.jsp">Lista
+					<li><a class="dropdown-item" href="ListarCapacitacion">Lista
 							de capacitaciones</a></li>
-					<li><a class="dropdown-item" href="crearcapacitacion.jsp">Crear
+					<li><a class="dropdown-item" href="CrearCapacitacion">Crear
 							capacitaciones</a></li>
 					<li><a class="dropdown-item" href="administrarasistentes.jsp">Administrar
 							asistentes</a></li>
