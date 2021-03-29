@@ -7,15 +7,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> ${param.title}</title><%-- <jsp:include page = "css/bootstrap.min.css" />	  --%>
-	<style type="text/css"> 
-		
-		 <jsp:include page = "css/estilos.css" />
-	</style>
-	<jsp:include page="menu.jsp"></jsp:include>
-	<script type="text/javascript">
-		<%@ include file="js/jquery-3.6.0.min.js" %>
-	</script>	
+	<title> ${param.title}</title>
+	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <br>
 <body>
@@ -24,4 +17,5 @@
 		<h1 class="titulo" id="mensaje1">${param.titulo}</h1>
 		<br>
 	</header>
+<jsp:include page="menu.jsp"></jsp:include>
 	

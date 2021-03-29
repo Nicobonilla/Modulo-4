@@ -42,6 +42,7 @@ public class Capacitacion /* extends Usuario implements Asesoria */{
 				+ ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion + ", cantidadAsistentes="
 				+ cantidadAsistentes + "]";
 	}
+	
 	//----------------------------------------------------------------------------
 	// METODOS
 	//----------------------------------------------------------------------------

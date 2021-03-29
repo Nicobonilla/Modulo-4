@@ -11,27 +11,22 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class CrearCapacitacion
  */
-@WebServlet("/CrearCapacitacion")
-public class CrearCapacitacion extends HttpServlet {
+@WebServlet("/CreacionDeCapacitacion")
+public class CreacionDeCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearCapacitacion() {
+    public CreacionDeCapacitacion() {
         super();
         // TODO Auto-generated constructor stub
     }
     
-    private static final void panel(HttpServletRequest request, HttpServletResponse response) {
-    	HttpSession sesion = request.getSession();
-    	Object usuario = (String) sesion.getAttribute("usuario");
-    }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		panel(request, response);
 		HttpSession sesion = request.getSession();
 		Object usuario = (String) sesion.getAttribute("usuario");
 		if (usuario != null) {

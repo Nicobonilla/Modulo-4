@@ -1,3 +1,6 @@
+<%@ page import ="modelo.Usuario" %>
+<%@ page import ="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -7,27 +10,28 @@
 </jsp:include>
 <div class="principal">
 	<div class="table-responsive ">
+	<%
+	List<Usuario> lista = (List<Usuario>) request.getAttribute("listadoUsuario");
+	%>
 		<table class="table table-bordered table caption-top"
 			style="color: aliceblue;">
-			<tr>
-				<th>RUN</th>
-				<th>Nombre</th>
-				<th>Apellidos</th>
-				<th>Tipo de usuario</th>
-
-			</tr>
-			<tr>
-				<th>22222222-2</th>
-				<td>Ricardo</td>
-				<td>Galindo Cuevas</td>
-				<td>Administrativo</td>
-				<td><a title="modificar datos" href=""><img
-						src="img/modificar.png" alt="modificar datos" width="24" height="24" /></a></td>
-				<td><a title="eliminar usuario" href="#"><img
-						src="img/eliminar.png"
-						alt="eliminar usuario" width="24" height="24" /></a></td>
+			<thead> 
+				<th scope="col">RUN</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Fecha de Nacimiento</th>
+			</thead>
+			<tbody>
+				<%
+				for (Usuario usu : lista ){
+				%>
+				<tr>
+					<td><%= usu.getRun() %></td>
+					<td><%= usu.getNombre()%></td>
+					<td><%= usu.getFeNac() %></td>
+				</tr>
+				<% } %>
+			</tbody>	
 		</table>
 	</div>
 </div>
-
 <jsp:include page="footer.jsp"></jsp:include>

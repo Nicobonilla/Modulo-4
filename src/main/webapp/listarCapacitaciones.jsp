@@ -1,7 +1,10 @@
 <%@ page import ="modelo.Capacitacion" %>
 <%@ page import ="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <jsp:include page="head.jsp">
 	<jsp:param value="Listar Capacitaciones" name="title"/>
 	<jsp:param value="Listado de Capacitaciones" name="titulo"/>
@@ -34,5 +37,6 @@
 			</tbody>	
 		</table>
 	</div>
+			<jsp:include page="crearCapSolo.jsp"></jsp:include>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>

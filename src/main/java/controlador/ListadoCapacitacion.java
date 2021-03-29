@@ -13,26 +13,23 @@ import javax.servlet.http.HttpSession;
 import implementacion.ImpIntCapacitacion;
 import modelo.Capacitacion;
 
-
-
 /**
  * Servlet implementation class ListarCapacitacion
  */
-@WebServlet("/ListarCapacitacion")
-public class ListarCapacitacion extends HttpServlet {
+@WebServlet("/ListadoCapacitacion")
+public class ListadoCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarCapacitacion() {
+    public ListadoCapacitacion() {
         super();
         // TODO Auto-generated constructor stub
     }
-    
     private static final void listaCapacitacion(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	ImpIntCapacitacion impIntCap = new ImpIntCapacitacion();
-		List<Capacitacion> listaCap = impIntCap.retornaListaCapacitacion();
+		List<Capacitacion> listaCap = impIntCap.obtenerCapacitaciones();
 		request.setAttribute("listadoCapacitacion", listaCap );
 		request.getRequestDispatcher("listarCapacitaciones.jsp").include(request, response);
     }

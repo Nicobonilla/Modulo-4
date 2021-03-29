@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<jsp:include page="head.jsp">
-	<jsp:param value="Crear Capacitación" name="title"/>
-	<jsp:param value="Crear Capacitación" name="titulo"/>
-</jsp:include>
-
-<div class="principal">
-
+</br>
+<h2> Crear Capacitación</h2>
+	<div class="principal">
 		<form class = "" action ="CreacionDeCapPost" method = "post">
 				<label for="nombreu">ID Capacitación:</label>
 				<input type="text" id="nombreu" name="idCapacitacion">
@@ -24,7 +20,5 @@
 				<input type="number" id="duracion" name="cantidadAsistentes">
 			<button style='margin-left: 50px;' type="submit">Crear capacitación</button>
 		</form>
+		</div>
 
-</div>
-
-<jsp:include page="footer.jsp"></jsp:include>
