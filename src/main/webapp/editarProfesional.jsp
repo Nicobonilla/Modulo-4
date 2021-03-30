@@ -43,9 +43,7 @@
             <br>
             <br>
             <button style='margin-left: 50px;'  type="submit" class="btn btn-secondary">Modificar datos</button>
-                <br>
-                <br>
-                <br>
+
          </form>
     </div>
     

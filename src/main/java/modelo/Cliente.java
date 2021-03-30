@@ -8,9 +8,10 @@ public class Cliente extends Usuario{
 	//----------------------------------------------------------------------------
 	// ATRIBUTOS
 	//----------------------------------------------------------------------------
-	private Integer rut;  // run < 99.999.999 
-	private String nombres; // obligatori, min 5 max 30
-	private String apellidos; // obligatori, min 5 max 30
+	private String nombre;
+	private String Apellidos;
+	private String feNac;
+	private Integer run;
 	private String telefono; // obligatorio
 	private String afp; // min 4 car, max 30
 	private Integer sisSalud; // 1 : Fonasa ; 2 : Isapre
@@ -30,15 +31,15 @@ public class Cliente extends Usuario{
 	public Cliente(String nombre, String feNac, Integer run, String nombres, 
 			String apellidos, String telefono, Integer edad) {
 		super( nombre, feNac, run);
-	}
+			this.telefono = telefono;
+			this.edad = edad;
+		}
+
+	
 	// COMPLETO
-	public Cliente(String nombre, String feNac, Integer run, Integer rut, String nombres, 
-			String apellidos, String telefono, String afp, Integer sisSalud,
+	public Cliente(String nombre, String feNac, Integer run, String telefono,  String afp, Integer sisSalud,
 			String direccion, String comuna, Integer edad) {
 		super( nombre, feNac, run);
-		this.rut = rut;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
 		this.telefono = telefono;
 		this.afp = afp;
 		this.sisSalud = sisSalud;
@@ -49,8 +50,8 @@ public class Cliente extends Usuario{
 	// TO STRING
 	@Override
 	public String toString() {
-		return "Cliente [ rut="  + rut + ", nombres=" + nombres + ", apellidos=" 
-				+ apellidos + ", telefono=" + telefono+ ", afp=" + afp + ", sisSalud="
+		return "Cliente [ rut="  + run + ", nombres=" + nombre  + ", telefono=" + 
+					telefono+ ", afp=" + afp + ", sisSalud="
 				+ sisSalud + ", direccion=" + direccion + ", comuna=" + comuna
 				+ ", edad=" + edad + "]";
 	}
@@ -70,7 +71,7 @@ public class Cliente extends Usuario{
 	// MOSTRAR
 	public void mostrar() {
 		super.mostrar();
-		System.out.println("CLIENTE[ RUT: "+ getRut()+ "Nombres: "+ getNombres()+ ", Apellidos: "+ getApellidos()+ 
+		System.out.println("CLIENTE[ RUT: "+ getRun()+ "Nombres: "+ getNombre()+ "Nombres: "+ getFeNac()+
 				", Telefono: "+ getTelefono()+ ", AFP: "+ getAfp()+", Sistema de Salud: "+ getSisSalud()+
 				", Dirección"+ getDireccion()+ ", Comuna: "+ getComuna()+ ", Edad: "+ getEdad());
 		}
@@ -97,30 +98,28 @@ public class Cliente extends Usuario{
 		return respuesta;
 	}
 	
-	public Integer getRut() {
-		return rut;
+
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setRut(Integer rut) {
-		this.rut = rut;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getFeNac() {
+		return nombre;
 	}
 
-	public String getNombres() {
-		return nombres;
+	public void setFeNac(String feNac) {
+		this.feNac = feNac;
+	}
+	public Integer getRun() {
+		return run;
 	}
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setRun(Integer run) {
+		this.run = run;
 	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
 	public String getTelefono() {
 		return telefono;
 	}

@@ -10,10 +10,12 @@ public class Usuario {
 	private String nombre;  // obligatorio, min 10 car max 50
 	private String feNac; //obligaatorio, data o string no matter, DD/MM/AAAA
 	private Integer run; // run < 99.999.999	
+	private Integer tipoUsuario;
 	
 	//----------------------------------------------------------------------------
 	// CONSTRUCTORES
 	//----------------------------------------------------------------------------
+
 
 	public Usuario() {
 	}
@@ -76,4 +78,10 @@ public class Usuario {
 		this.run = run;
 	}
 
+	public Integer getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(Integer tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 }

@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <jsp:include page="head.jsp">
-	<jsp:param value="Lista de Usuarios" name="title" />
-	<jsp:param value="Lista de Usuarios" name="titulo" />
-</jsp:include>
-
-<div class="principal">
-	<br>
 	<form id="editarcliente">
 		<ul>
 			<li><label for="runclie">Run cliente a editar:</label> <input
@@ -42,6 +35,6 @@
 		<button style='margin-left: 240px;' type="submit"
 			class="btn btn-secondary">Modificar datos</button>
 	</form>
-</div>
+
 <jsp:include page="footer.jsp" ></jsp:include>
     

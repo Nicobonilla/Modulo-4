@@ -12,7 +12,7 @@ public class Conexion {
 
 	// Propiedades 
 	private static Connection conn = null;
-	private static Capacitacion cap = null;
+	private static  Conexion c;
 	
 	// Constructor 
 	private Conexion() {
@@ -37,15 +37,23 @@ public class Conexion {
 	
 	// Métodos 
 	public static Connection conectar() {
-		if (conn == null) {
-			new Conexion();
-		}
-		System.out.println("conn(2): " + conn.toString() );
 		try {
+			if (conn != null) {
+				if (conn.isClosed()) {
+					conn = null;
+					c = null;
+				}
+			}
+			
+			if ( conn == null ) {
+				c = new Conexion();
+			}
+			System.out.println("conn(2): " + conn.toString() );
 			System.out.println("conn(2): " + conn.getSchema() );
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return conn;
-	}
+	} 
 }
+
