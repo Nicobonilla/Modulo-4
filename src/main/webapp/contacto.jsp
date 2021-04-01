@@ -6,22 +6,29 @@
 	<jsp:param value="Contacto" name="titulo"/>
 </jsp:include>
 
-<main class="principal">
-	<form>
-		<ul>
-			<li><label for="nombreu">Nombre:</label> <input class="form"
-				type="text" id="nombreu" name="ingreso_nombre"></li>
-				
-			<li><label for="correo">Correo electronico:</label> <input
-				class="form" type="text" id="correo" name="ingreso_correo"></li>
-			
-			<li><label for="telefono">Telefono:</label> <input class="form"
-				type="tel" id="telefono" name="telefono_usuario"></li>
-			
-			<li><label for="mensaje">Mensaje:</label> <textarea class="form"
-					id="mensaje" name="mensaje_usuario"></textarea></li>
-		</ul>
-		<button style='margin-left: 300px;' type="submit">Enviar</button>
-	</form>
+<main >
+	<div class="row">
+		<div class="col">
+			<div class="container-fluid col-10 col-xl-10 mx-auto in-line">
+				<form action = "ContactoPost" method = "post" id="contacto">
+					<label >Nombre:
+						<input type="text" name="nombre">
+					</label> 
+					<label >E-mail:
+						<input type="text" name="correo">
+					</label>
+					<label>Telefono:
+						<input type="text" name="telefono"> 
+					</label> 
+					<label>Mensaje: 	
+						<textarea name="mensaje"></textarea>
+					</label>
+					<button style= "btn btn-primary" type="submit">Enviar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

@@ -26,7 +26,7 @@
 				%>
 				<tr>
 					<td><%= usu.getRun() %></td>
-					<td><%= usu.getNombre()%></td>
+					<td><%= usu.getNombres()%></td>
 					<td><%= usu.getFeNac() %></td>
 				</tr>
 				<% } %>

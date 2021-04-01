@@ -8,9 +8,6 @@ public class Cliente extends Usuario{
 	//----------------------------------------------------------------------------
 	// ATRIBUTOS
 	//----------------------------------------------------------------------------
-	private String nombre;
-	private String Apellidos;
-	private String feNac;
 	private Integer run;
 	private String telefono; // obligatorio
 	private String afp; // min 4 car, max 30
@@ -28,30 +25,31 @@ public class Cliente extends Usuario{
 	}
 	// CONSTRUCTOR MÍNIMO, INCLUYE SU CLASE PADRE: USUARIO, 
 	//Y LOS ATRIBUTOS OBLIGATORIOS
-	public Cliente(String nombre, String feNac, Integer run, String nombres, 
-			String apellidos, String telefono, Integer edad) {
-		super( nombre, feNac, run);
+	public Cliente(Integer run, String telefono, Integer edad, String nombres, String apellidos ) {
+		super( nombres, apellidos, run);
 			this.telefono = telefono;
 			this.edad = edad;
 		}
 
 	
 	// COMPLETO
-	public Cliente(String nombre, String feNac, Integer run, String telefono,  String afp, Integer sisSalud,
+	public Cliente(String nombres, String apellidos, String feNac, Integer run,
+			String tipoUsuario, String telefono, String afp, Integer sisSalud, 
 			String direccion, String comuna, Integer edad) {
-		super( nombre, feNac, run);
+		super(nombres, apellidos,  feNac,  run, tipoUsuario);
 		this.telefono = telefono;
 		this.afp = afp;
 		this.sisSalud = sisSalud;
 		this.direccion = direccion;
 		this.comuna = comuna;
 		this.edad = edad;
+		this.apellidos = apellidos;
+		
 	}
 	// TO STRING
 	@Override
 	public String toString() {
-		return "Cliente [ rut="  + run + ", nombres=" + nombre  + ", telefono=" + 
-					telefono+ ", afp=" + afp + ", sisSalud="
+		return "Cliente [ nombre=" + obtenerNombre() + ", telefono=" + telefono+ ", afp=" + afp + ", sisSalud="
 				+ sisSalud + ", direccion=" + direccion + ", comuna=" + comuna
 				+ ", edad=" + edad + "]";
 	}
@@ -71,13 +69,15 @@ public class Cliente extends Usuario{
 	// MOSTRAR
 	public void mostrar() {
 		super.mostrar();
-		System.out.println("CLIENTE[ RUT: "+ getRun()+ "Nombres: "+ getNombre()+ "Nombres: "+ getFeNac()+
+		System.out.println("CLIENTE[ RUT: "+ getRun()+ "Nombres: "+ getNombres()+ "Nombres: "+ getFeNac()+
 				", Telefono: "+ getTelefono()+ ", AFP: "+ getAfp()+", Sistema de Salud: "+ getSisSalud()+
 				", Dirección"+ getDireccion()+ ", Comuna: "+ getComuna()+ ", Edad: "+ getEdad());
 		}
 	// OBTENER NOMBRE: Obtiene Nombre y Apellidos del cliente
 	public String obtenerNombre() {
-		return getNombre()+ " "+ getApellidos();
+		String nombre = "";
+		nombre = getNombres()+ " "+ getApellidos();
+		return nombre;
 	}	
 	// OBTENER SISTEMA DE SALUD: Despliega el tipo de Sistema de Salud del Cliente
 	public String obtenerSistemaSalud( Integer sisSalud ) {
@@ -97,29 +97,22 @@ public class Cliente extends Usuario{
 		} while ( repetir );
 		return respuesta;
 	}
+
 	
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getFeNac() {
-		return nombre;
-	}
-
-	public void setFeNac(String feNac) {
-		this.feNac = feNac;
-	}
 	public Integer getRun() {
 		return run;
 	}
-
 	public void setRun(Integer run) {
 		this.run = run;
 	}
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	
 	public String getTelefono() {
 		return telefono;
 	}

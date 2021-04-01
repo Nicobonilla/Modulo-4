@@ -39,12 +39,12 @@ public class ImpIntCapacitacion extends Capacitacion  implements IntCapacitacion
 			while (rs.next()) {
 				Capacitacion cap =  new Capacitacion();
 				cap.setIdCapacitacion(rs.getInt("IDCAPACITACION"));
-				cap.setRutCliente( rs.getInt("CLIENTE_RUTCLIENTE"));
 				cap.setDia( rs.getString("CAPFECHA"));
 				cap.setHora( rs.getString("CAPHORA"));
 				cap.setLugar( rs.getString("CAPLUGAR"));
 				cap.setDuracion( rs.getString("CAPDURACION"));
-				cap.setCantidadAsistentes( rs.getInt("ASISTENTES"));
+				cap.setCantidadAsistentes( rs.getInt("CAP_NUM_ASIS"));
+				cap.setRutCliente( rs.getInt("CLIENTE_RUTCLIENTE"));
 				listadoCapacitacion.add(cap);
 			}
 			//paso 5: cierra el objeto de conexión 

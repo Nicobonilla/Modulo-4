@@ -12,7 +12,7 @@ public class Conexion {
 
 	// Propiedades 
 	private static Connection conn = null;
-	private static  Conexion c;
+	private static  Conexion ec ;
 	
 	// Constructor 
 	private Conexion() {
@@ -41,12 +41,12 @@ public class Conexion {
 			if (conn != null) {
 				if (conn.isClosed()) {
 					conn = null;
-					c = null;
+					ec = null;
 				}
 			}
 			
 			if ( conn == null ) {
-				c = new Conexion();
+				ec = new Conexion();
 			}
 			System.out.println("conn(2): " + conn.toString() );
 			System.out.println("conn(2): " + conn.getSchema() );

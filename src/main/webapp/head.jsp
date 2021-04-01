@@ -12,10 +12,11 @@
 </head>
 <br>
 <body>
-	<header class="cabecera">
+	
+<jsp:include page="menu.jsp"></jsp:include>
+<header class="cabecera">
 		<br>
 		<h1 class="titulo" id="mensaje1">${param.titulo}</h1>
 		<br>
-	</header>
-<jsp:include page="menu.jsp"></jsp:include>
+</header>
 	

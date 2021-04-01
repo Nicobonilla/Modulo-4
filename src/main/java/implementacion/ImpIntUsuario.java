@@ -15,7 +15,7 @@ import modelo.Profesional;
 import modelo.Usuario;
 
 public class ImpIntUsuario  extends Usuario  implements IntUsuario {
-	
+
 	@Override
 	public List<Usuario> obtenerUsuarios(){
 		List<Usuario> listadoUsuario = new ArrayList<Usuario>();
@@ -29,7 +29,7 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 			//paso 4: leer resultado registro a registro 
 			while (rs.next()) {
 				Usuario usu =  new Usuario();
-				usu.setNombre(rs.getString("USERNOMBRE"));
+				usu.setNombres(rs.getString("USERNOMBRE"));
 				usu.setFeNac( rs.getString("USERFENACI"));
 				usu.setRun( rs.getInt("USERRUN"));
 				listadoUsuario.add(usu);
@@ -40,7 +40,9 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 			System.out.println(e.getMessage());
 		}
 		return listadoUsuario;
-	};
+	}
+	
+	
 	
 	/**
 	 * La funcion ingresarUsuario permite ingresar los atributos de la clase 
@@ -53,16 +55,20 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 			boolean registrar = false;
 			Statement stmt = null;
 			Connection con = null;
-			String sql = "INSERT INTO PROFESIONAL (nombre, fecha, run, tipo ) VALUES ('"
-					+ usuario.getNombre() + "','"
-					+ usuario.getFeNac() + "','"
-					+ usuario.getRun() + "'}'";
+			String sql = "INSERT INTO USUARIO (USERNOMBRE, USERAPELLIDO, USERFENACI,"
+					+ " USERRUN, TIPO_USUARIO) VALUES ('" 
+					+ usuario.getNombres() + "','"
+					+ usuario.getApellidos() + "','"
+					+ usuario.getFeNac() + "',"
+					+ usuario.getRun() + ",'"
+					+ usuario.getTipoUsuario() + "')";
 			try {
 				con = Conexion.conectar();
 				stmt = con.createStatement();
 				stmt .execute(sql);
 				registrar = true;
 				stmt.close();
+				//con.close();
 			} catch (SQLException e) {
 				System.out.println("Error: "
 						+ " Clase ClienteDaoImpl, "
@@ -70,29 +76,28 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 				e.printStackTrace();
 			}
 			return registrar;
-		};
+		}
 		/**
 		 * La funcion ingresarCliente permite ingresar los atributos de la clase
 		 * Cliente al sistema
 		 * @param usuario. Objeto de la clase Usuario
 		 * @return Retorna un objeto de la clase Cliente
 		 */
+		/*
 		public boolean ingresarCliente(Usuario usuario) {
 			boolean registrar = false;
 			Statement stmt = null;
 			Connection con = null;
 			Cliente cli = new Cliente();
-			String sql = "INSERT INTO CLIENTE (nombre, fecha, run, telefono, afp, sisSalud, direccion, comuna, edad ) VALUES ('"
-					+ usuario.getNombre() + "','"
-					+ usuario.getFeNac() + "','"
+			String sql = "INSERT INTO CLIENTE ( run, nombreComple, telefono, afp, sisSalud, direccion, comuna, edad ) VALUES ("
 					+ usuario.getRun() +  "','"
+					+ usuario.obtenerNombreComple() +  "','"
 					+ cli.getTelefono() +  "','"
 					+ cli.getAfp() +  "','"
 					+ cli.getSisSalud() +  "','"
 					+ cli.getDireccion() +  "','"
-					+ cli.getFeNac() +  "','"
-					+ cli.getFeNac() +  "','"
-					+ cli.getEdad() +"'}'";
+					+ cli.getComuna() +  "','"
+					+ cli.getEdad() +"'}";
 			try {
 				con = Conexion.conectar();
 				stmt = con.createStatement();
@@ -106,7 +111,7 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 				e.printStackTrace();
 			}
 			return registrar;
-		};
+		}
 			
 		/**
 		 * El metodo ingresarProfesional permite ingresar los atributos de los usuarios
@@ -114,17 +119,16 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 		 * @param Como parametro utiliza un objeto de la clase Usuario
 		 * @return un objeto de clase Profesional
 		 */
+		/*
 		public boolean ingresarProfesional(Usuario  usuario) {
 			boolean registrar = false;
 			Statement stmt = null;
 			Connection con = null;
 			Profesional pro = new Profesional();
-			String sql = "INSERT INTO CLIENTE (nombre, fecha, run, tipo, titulo, feIngreso ) VALUES ('"
-					+ usuario.getNombre() + "','"
-					+ usuario.getFeNac() + "','"
+			String sql = "INSERT INTO PROFESIONAL (run, nombre, apelludos, telefono, ttitulo, feIngreso ) VALUES ('"
 					+ usuario.getRun() +  "','"
 					+ pro.getTitulo() +  "','"
-					+ pro.getFeIngreso() + "'}'";
+					+ pro.getFeIngreso() + "'}";
 			try {
 				con = Conexion.conectar();
 				stmt = con.createStatement();
@@ -138,36 +142,7 @@ public class ImpIntUsuario  extends Usuario  implements IntUsuario {
 				e.printStackTrace();
 			}
 			return registrar;
-		};
-	 	/*El metodo ingresarAdministrativo permite ingresar los atributos de los usuarios
-		 * Administrativo al sistema
-		 * @param Como parametro utiliza un objeto de la clase Usuario
-		 * @return un objeto de clase Administrativo
-		 */
-		public boolean ingresarAdministrativo(Usuario usuario) {
-			boolean registrar = false;
-			Statement stmt = null;
-			Connection con = null;
-			Administrativo adm = new Administrativo();
-			String sql = "INSERT INTO CLIENTE (nombre, fecha, run, tipo, area, experiencia ) VALUES ('"
-					+ usuario.getNombre() + "','"
-					+ usuario.getFeNac() + "','"
-					+ usuario.getRun() +  "','"
-					+ adm.getArea() +  "','"
-					+ adm.getExperienciaPrevia() + "'}'";
-			try {
-				con = Conexion.conectar();
-				stmt = con.createStatement();
-				stmt .execute(sql);
-				registrar = true;
-				stmt.close();
-			} catch (SQLException e) {
-				System.out.println("Error: "
-						+ " Clase ClienteDaoImpl, "
-						+ "método registrar");
-				e.printStackTrace();
-			}
-			return registrar;
-		};
-	
+		}
+	 	
+*/	
 }

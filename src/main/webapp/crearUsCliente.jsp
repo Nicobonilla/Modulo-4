@@ -7,36 +7,38 @@
 	</jsp:include>
     
 	<form action="CreacionDeUsuario" method="post">
-		<label for="nombreu">Nombres: </label> 
-		<input style="margin-left: 103px;" type="text" id="nombreu" 
-		name="nombre" required>
-		<label for="Fecha naciemiento">Fecha de Nacimiento:</label> 
-		<input	style="margin-left: 5px;" type="date" id="Fecha" 
-		name="feNac" required>
-		<label for="run">RUN: </label> <input style="margin-left: 140px;"
-			type="text" id="run" name="run" required>
-
-			<label for="telefono">Telefono:</label> <input type="number"
-				id="telefono" name="telefono" class="required" >
-
-		<label for="afp">Afp:</label> <input type="text" id="afp"
-				name="afp" class="required" minlength="4">
-
-		<label for="sistsalud">Sistema de salud:</label> <input
-				type="text" id="sisSalud" name="ingreso_salud" class="required">
-	
-			<label for="direccion">Dirección:</label> <input type="text"
-				id="direccion" name="ingreso_direccion" class="required">
-				
-		<label for="comuna">Comuna:</label> <input type="text"
-				id="comuna" name="ingreso_comuna" class="required" >
-	
-			<label for="edad">Edad:</label> <input type="number"
-				id="edad" name="ingreso_edad" class="required" min="1"
-				max="99">
-				<input type="hidden" id="custId" name="tipoUsuario" value="cli">
-		<button style='margin-left: 240px;' type="submit"
-			class="btn btn-secondary">Crear</button>
+		<label>Nombres:
+			<input type="text" name="nombres" required>
+		 </label> 
+		 <label>Apellidos:
+			<input type="text" name="apellidos" required>
+		 </label> 
+		<label >Fecha de Nacimiento:
+			<input type="date" name="feNac" > <!-- required -->
+		</label> 
+		<label>RUN: 
+			<input type="text" name="run" >
+		</label>
+		<label >Telefono:
+			<input type="number" name="telefono" required >
+		</label>
+		<label>Afp:
+			<input type="text" 	name="afp" class="required" ><!-- minlength="4" -->
+		</label> 
+		<label>Sistema de salud:
+			<input type="text" name="sisSalud" class="required">
+		</label>
+		<label>Dirección:
+			<input type="text" name="direccion" class="required">
+		</label>	
+		<label for="comuna">Comuna: 
+			<input type="text" name="comuna" class="required" >
+		</label>
+		<label>Edad:
+			<input type="number" name="edad" class="required" min="1" max="99">
+		</label> 
+			<input type="hidden" id="custId" name="tipoUsuario" value="Cliente">
+		<button type="submit" class="btn btn-primary">Crear</button>
 	</form>
 
 <jsp:include page="footer.jsp" ></jsp:include>

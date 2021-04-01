@@ -7,27 +7,28 @@
 </jsp:include>
 
 <div class="principal">
-
 	<form action="CreacionDeUsuario" method="post">
-		<label for="nombreu">Nombres: </label> 
-		<input style="margin-left: 103px;" type="text" id="nombreu" 
-		name="nombre" required>
-		<label for="Fecha naciemiento">Fecha de Nacimiento:</label> 
-		<input	style="margin-left: 5px;" type="date" id="Fecha" 
-		name="feNac" required>
-		<label for="run">RUN: </label> <input style="margin-left: 140px;"
-			type="text" id="run" name="run" required>
-
-			<label for="telefono">Area:</label> <input type="number"
-				id="telefono" name="area" class="required" >
-
-		<label for="afp">Experiencia:</label> <input type="text" id="afp"
-				name="experienciaPrevia" class="required" minlength="4">
-				<input type="hidden" id="custId" name="tipoUsuario" value="adm">
-		<button style='margin-left: 240px;' type="submit"
-			class="btn btn-secondary">Crear</button>
+		<label>Nombres: 
+			<input type="text" name="nombres" required>
+		</label> 
+		<label>Apellidos: 
+			<input type="text" name="apellidos" required>
+		</label> 
+		<label>Fecha Nac.:
+			<input type="date" name="feNac" >
+		</label> 
+		<label>RUN: 
+			<input	type="text" name="run" required>
+		</label> 
+		<label >E-mail:
+			<input type="text" name="correo">
+		</label> 
+		<label>Area:
+			<input type="text" name="area">
+		</label>
+			<input type="hidden" id="custId" name="tipoUsuario" value="Administrativo">
+		<button type="submit" class="btn btn-primary">Crear</button>
 	</form>
-
 </div>
 
 <jsp:include page="footer.jsp" ></jsp:include>

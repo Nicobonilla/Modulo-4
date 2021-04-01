@@ -5,35 +5,49 @@ package modelo;
  * @author nbnla
  *
  */
-public class Administrativo extends Usuario {
+public class Administrativo extends Usuario  {
 	//----------------------------------------------------------------------------
 	// ATRIBUTOS
 	//----------------------------------------------------------------------------
-	private String area; // min 5 car, max 20
-	private String experienciaPrevia; // max 100 car
-	
+	private String runAdm;
+	private String correo; // min 5 car, max 20
+	private String area; // max 100 car
+
 	//----------------------------------------------------------------------------
 	// CONSTRUCTORES
 	//----------------------------------------------------------------------------
+	
+	
+	
+	
 	public Administrativo () {
 		super();
 	}
-	// MINIMO CON CLASE PADRE
-	public Administrativo(String nombre, String feNac, Integer run) {
-		super(nombre, feNac, run);
-	}
-	// MINIMO CON CLASE PADRE Y ATRIBUTOS OBLIGATORIOS
-	public Administrativo(String nombre, String feNac, Integer run, String area) {
-		super(nombre, feNac, run);
-	}
-	public Administrativo(String nombre, String feNac, Integer run, String area, String experienciaPrevia) {
-		super(nombre, feNac, run);
+	
+	public Administrativo(String runAdm, String correo, String area) {
+		super();
+		this.runAdm = runAdm;
+		this.correo = correo;
 		this.area = area;
-		this.experienciaPrevia = experienciaPrevia;
 	}
+
+	// MINIMO CON CLASE PADRE
+	public Administrativo(String nombres, String apellidos, String feNac, Integer run, String tipoUsuario) {
+		super(nombres, apellidos, feNac, run, tipoUsuario);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Administrativo(String nombres, String apellidos, String feNac, Integer run, String tipoUsuario,
+			String runAdm, String correo, String area) {
+		super(nombres, apellidos, feNac, run, tipoUsuario);
+		this.runAdm = runAdm;
+		this.correo = correo;
+		this.area = area;
+	}
+
 	@Override
 	public String toString() {
-		return "Administrativo [ area=" + area + ", experienciaPrevia=" + experienciaPrevia +"]";
+		return "Administrativo [ correo =" + correo + ", area =" + area +"]";
 	}
 	//----------------------------------------------------------------------------
 	// IMPLEMENTACION INTERFACE ASESORIA
@@ -49,23 +63,31 @@ public class Administrativo extends Usuario {
 	// MOSTRAR
 	public void mostrar() {
 		super.mostrar();
-		System.out.println(" ADM [ Área: "+ getArea()+ ", Exp. Previa: "+ getExperienciaPrevia()+ " ]");
+		System.out.println(" ADM [ Correo: "+ getCorreo()+ ", Area: "+ getArea()+ " ]");
 	}
-	// GETTERS & SETTERS
+
+	public String getRunAdm() {
+		return runAdm;
+	}
+
+	public void setRunAdm(String runAdm) {
+		this.runAdm = runAdm;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
 	public String getArea() {
 		return area;
 	}
 
 	public void setArea(String area) {
 		this.area = area;
-	}
-
-	public String getExperienciaPrevia() {
-		return experienciaPrevia;
-	}
-
-	public void setExperienciaPrevia(String experienciaPrevia) {
-		this.experienciaPrevia = experienciaPrevia;
 	}
 
 }

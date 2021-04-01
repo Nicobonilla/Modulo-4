@@ -21,9 +21,8 @@
 
 		<label for="afp">Fecha Ingreso:</label> <input type="text" id="afp"
 				name="feIngreso" class="required" minlength="4">
-<input type="hidden" id="custId" name="tipoUsuario" value="pro">
-		<button style='margin-left: 240px;' type="submit"
-			class="btn btn-secondary">Crear</button>
+<input type="hidden" id="custId" name="tipoUsuario" value="Profesional">
+		<button type="submit" class="btn btn-secondary">Crear</button>
 	</form>
 
     
